@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first ChartJS test</title>
+    <link rel="stylesheet"
+          href="bower_components/chart.js/dist/chart.min.css">
+  </head>
+  <body>
+    <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+    <canvas id="chart-user-count" width="800" height="600"></canvas>
+
+    <script src="bower_components/chart.js/dist/chart.min.js"></script>
+    <script>
+    // var ctx = document.getElementById('myChart').getContext('2d');
+    // var myChart = new Chart(ctx, {
+    //     type: 'bar',
+    //     data: {
+    //         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    //         datasets: [{
+    //             label: '# of Votes',
+    //             data: [12, 19, 3, 5, 2, 3],
+    //             backgroundColor: [
+    //                 'rgba(255, 99, 132, 0.2)',
+    //                 'rgba(54, 162, 235, 0.2)',
+    //                 'rgba(255, 206, 86, 0.2)',
+    //                 'rgba(75, 192, 192, 0.2)',
+    //                 'rgba(153, 102, 255, 0.2)',
+    //                 'rgba(255, 159, 64, 0.2)'
+    //             ],
+    //             borderColor: [
+    //                 'rgba(255, 99, 132, 1)',
+    //                 'rgba(54, 162, 235, 1)',
+    //                 'rgba(255, 206, 86, 1)',
+    //                 'rgba(75, 192, 192, 1)',
+    //                 'rgba(153, 102, 255, 1)',
+    //                 'rgba(255, 159, 64, 1)'
+    //             ],
+    //             borderWidth: 1
+    //         }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             yAxes: [{
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }]
+    //         }
+    //     }
+    // });
+
+    var context = document.getElementById('chart-user-count').getContext('2d');
+    var chartUserCount = new Chart(context, {
+      type: 'line',
+      data: {
+        labels: [
+          '2019 September',
+          '2019 October',
+          '2019 November',
+          '2019 December',
+          '2020 January',
+          '2020 February',
+          '2020 March'
+        ],
+        datasets: [
+          {
+            label: 'user count',
+            data: [ 23452, 25262, 30760, 28960, 31234, 34503, 27689 ],
+          }
+        ]
+      },
+      options: {
+        responsive: false,
+        elements: {
+          line: {
+            tension: 0,
+          }
+        },
+      }
+    });
+
+    </script>
+  </body>
+</html>

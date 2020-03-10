@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first Chartist Tests</title>
+    <link rel="stylesheet"
+          href="bower_components/chartist/dist/chartist.min.css">
+  </head>
+  <body>
+    <!-- <div class="ct-chart ct-perfect-fourth"></div> -->
+    <!-- <div class="ct-chart ct-golden-section" id="chart1"></div> -->
+
+    <div id='chart-user-count'></div>
+
+    <script src="bower_components/chartist/dist/chartist.min.js"></script>
+    <script>
+    // var data = {
+    //   // A labels array that can contain any sort of values
+    //   labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+    //   // Our series array that contains series objects or in this case series data arrays
+    //   series: [
+    //     [5, 2, 4, 2, 0]
+    //   ]
+    // };
+
+    // // Create a new line chart object where as first parameter we pass in a selector
+    // // that is resolving to our chart container element. The Second parameter
+    // // is the actual data object.
+    // new Chartist.Line('.ct-chart', data);
+
+    // // Initialize a Line chart in the container with the ID chart1
+    // new Chartist.Line('#chart1', {
+    //   labels: [1, 2, 3, 4],
+    //   series: [[100, 120, 180, 200]]
+    // });
+
+    new Chartist.Line('#chart-user-count',
+      // data
+      {
+        labels: [
+          '2019 September',
+          '2019 October',
+          '2019 November',
+          '2019 December',
+          '2020 January',
+          '2020 February',
+          '2020 March'
+        ],
+        series: [[ 23452, 25262, 30760, 28960, 31234, 34503, 27689 ]]
+      },
+      // options
+      {
+        width: 800,
+        height: 600,
+        lineSmooth: Chartist.Interpolation.none({
+          fillHoles: false
+        }),
+      });
+    </script>
+  </body>
+</html>

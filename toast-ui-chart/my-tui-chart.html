@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Toast UI Chart</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/tui-chart/dist/tui-chart.min.css" />
+  </head>
+  <body>
+    <!-- <div id="container-id"></div> -->
+    <div id="chart-user-count"></div>
+
+    <!-- include libraries -->
+    <script src="bower_components/tui-code-snippet/dist/tui-code-snippet.min.js"></script>
+    <script src="bower_components/raphael/raphael.min.js"></script>
+    <!-- include chart.min.js -->
+    <script src="bower_components/tui-chart/dist/tui-chart.min.js"></script>
+    <script>
+    // var container = document.getElementById('container-id'),
+    //     data = {
+    //         categories: ['cate1', 'cate2', 'cate3'],
+    //         series: [
+    //             {
+    //                 name: 'Legend1',
+    //                 data: [20, 30, 50]
+    //             },
+    //             {
+    //                 name: 'Legend2',
+    //                 data: [40, 40, 60]
+    //             },
+    //             {
+    //                 name: 'Legend3',
+    //                 data: [60, 50, 10]
+    //             },
+    //             {
+    //                 name: 'Legend4',
+    //                 data: [80, 10, 70]
+    //             }
+    //         ]
+    //     },
+    //     options = {
+    //         chart: {
+    //             width: 500,
+    //             height: 400,
+    //             title: 'Chart Title'
+    //         },
+    //         yAxis: {
+    //             title: 'Y Axis Title'
+    //         },
+    //         xAxis: {
+    //             title: 'X Axis Title'
+    //         }
+    //     };
+    // tui.chart.barChart(container, data, options);
+
+    var chartUserCount = document.getElementById('chart-user-count'),
+        data = {
+          categories: [
+            '2019 September',
+            '2019 October',
+            '2019 November',
+            '2019 December',
+            '2020 January',
+            '2020 February',
+            '2020 March'
+          ],
+          series: [
+            {
+              name: 'user count',
+              data: [ 23452, 25262, 30760, 28960, 31234, 34503, 27689 ]
+            }
+          ]
+        },
+        options = {
+          chart: {
+            width: 800,
+            height: 600
+          },
+        };
+
+    tui.chart.lineChart(chartUserCount, data, options);
+    </script>
+  </body>
+</html>
