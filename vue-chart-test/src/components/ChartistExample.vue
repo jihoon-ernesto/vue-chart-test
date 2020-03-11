@@ -1,8 +1,9 @@
 <template>
-  <div id='chart-user-count'>
+  <div id='container'>
+    <p>{{ title }}</p>
     <!-- TODO: handle the css properly -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-    <p>{{ title }}</p>
+    <div id='chart-user-count'></div>
   </div>
 </template>
 
@@ -29,7 +30,9 @@ export default {
           '2020 February',
           '2020 March'
         ],
-        series: [[ 23452, 25262, 30760, 28960, 31234, 34503, 27689 ]]
+        series: [
+          [ 23452, 25262, 30760, 28960, 31234, 34503, 27689 ]
+        ]
       },
       // options
       {

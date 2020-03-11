@@ -1,7 +1,7 @@
 <template>
-  <div id='chart-user-count'>
+  <div id='container'>
     <p>{{ title }}</p>
-    <div class='canvas-box'>
+    <div class='chart-box'>
       <canvas id="chart-canvas" :width="width" :height="height"></canvas>
     </div>
   </div>
@@ -59,7 +59,10 @@ export default {
 </script>
 
 <style scoped>
-.canvas-box {
+#container {
+  margin-top: 50px;
+}
+.chart-box {
   display: flex;
   align-items: center;
   justify-content: center;

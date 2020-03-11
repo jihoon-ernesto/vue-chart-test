@@ -1,4 +1,7 @@
-import Vue from 'vue'
+// TODO: fix the importing
+// import Vue from 'vue'
+import Vue from 'vue/dist/vue.js'
+
 import App from './App.vue'
 
 Vue.config.productionTip = false
