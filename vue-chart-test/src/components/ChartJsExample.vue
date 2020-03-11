@@ -1,27 +1,15 @@
-<template>
-  <div id='container'>
-    <p>{{ title }}</p>
-    <div class='chart-box'>
-      <canvas id="chart-canvas" :width="width" :height="height"></canvas>
-    </div>
-  </div>
-</template>
 
 <script>
-import Chart from 'chart.js';
+import { Line } from 'vue-chartjs'
 
 export default {
   name: 'chart-js-example',
+  extends: Line,
   props: {
-    title: String,
   },
-  mounted() {
-    console.log(this.title + " mounted.");
-
-    let context = document.getElementById('chart-canvas').getContext('2d');
-    new Chart(context, {
-      type: 'line',
-      data: {
+  data() {
+    return {
+      chartData: {
         labels: [
           '2019 September',
           '2019 October',
@@ -36,35 +24,25 @@ export default {
             label: 'user count',
             data: [ 23452, 25262, 30760, 28960, 31234, 34503, 27689 ],
           }
-        ]
+        ],
       },
-      options: {
+      chartOptions: {
         responsive: false,
         elements: {
           line: {
             tension: 0,
           }
         },
-      }
-    });
-
-  },
-  data() {
-    return {
-      width: 800,
-      height: 600,
+      },
     };
+  },
+  mounted() {
+    console.log(this.$options.name + " mounted.");
+
+    this.renderChart(this.chartData, this.chartOptions);
   },
 }
 </script>
 
 <style scoped>
-#container {
-  margin-top: 50px;
-}
-.chart-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 </style>

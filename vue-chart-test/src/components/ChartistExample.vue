@@ -1,6 +1,5 @@
 <template>
   <div id='container'>
-    <p>{{ title }}</p>
     <!-- TODO: handle the css properly -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <vue-chartist
@@ -17,7 +16,6 @@ import VueChartist from 'v-chartist';
 export default {
   name: 'chartist-example',
   props: {
-    title: String
   },
   components: {
     'vue-chartist': VueChartist,
@@ -48,7 +46,7 @@ export default {
     };
   },
   mounted() {
-    console.log(this.title + " mounted.");
+    console.log(this.$options.name + " mounted.");
   }
 }
 </script>

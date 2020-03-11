@@ -1,6 +1,5 @@
 <template>
   <div id='container'>
-    <p>{{ title }}</p>
     <div class='chart-box'>
       <line-chart :data="chartData" :options="options"/>
     </div>
@@ -14,7 +13,6 @@ import { lineChart } from '@toast-ui/vue-chart'
 export default {
   name: 'toast-chart-example',
   props: {
-    title: String
   },
   components: {
     'line-chart': lineChart
@@ -47,18 +45,10 @@ export default {
       }
   },
   mounted() {
-    console.log(this.title + " mounted.");
+    console.log(this.$options.name + " mounted.");
   },
 }
 </script>
 
 <style scoped>
-#container {
-  margin-top: 50px;
-}
-.chart-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 </style>

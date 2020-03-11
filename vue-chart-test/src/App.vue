@@ -1,8 +1,16 @@
 <template>
-  <div id="app">
-    <ChartistExample title="my chartist example" />
-    <ChartJsExample title="my chart.js example" />
-    <ToastChartExample title="my toast-chart example" />
+  <div id="app" class="container">
+    <p>my chartist example</p>
+    <ChartistExample class="chart" />
+
+    <p>my chart.js example</p>
+    <ChartJsExample class="chart"
+      :width="chartWidth"
+      :height="chartHeight"
+    />
+
+    <p>my toast-chart example</p>
+    <ToastChartExample class="chart" />
   </div>
 </template>
 
@@ -18,6 +26,10 @@ export default {
     ChartJsExample,
     ToastChartExample,
   },
+  computed: {
+    chartWidth: () => { return 800; },
+    chartHeight: () => { return 600; },
+  },
 }
 </script>
 
@@ -29,5 +41,16 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart {
+  margin: 50px;
 }
 </style>
