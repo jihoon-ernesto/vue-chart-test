@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <ChartistExample title="my chartist example" />
+    <ChartJsExample title="my chart.js example" />
   </div>
 </template>
 
 <script>
 import ChartistExample from './components/ChartistExample.vue'
+import ChartJsExample from './components/ChartJsExample.vue'
 
 export default {
   name: 'App',
   components: {
     ChartistExample,
+    ChartJsExample,
   }
 }
 </script>
