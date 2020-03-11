@@ -3,24 +3,28 @@
     <p>{{ title }}</p>
     <!-- TODO: handle the css properly -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-    <div id='chart-user-count'></div>
+    <vue-chartist
+      type="Line"
+      :data="chartData"
+      :options="chartOptions"
+      ></vue-chartist>
   </div>
 </template>
 
 <script>
-import Chartist from 'chartist';
+import VueChartist from 'v-chartist';
 
 export default {
   name: 'chartist-example',
   props: {
     title: String
   },
-  mounted() {
-    console.log(this.title + " mounted.");
-
-    new Chartist.Line('#chart-user-count',
-      // data
-      {
+  components: {
+    'vue-chartist': VueChartist,
+  },
+  data() {
+    return {
+      chartData: {
         labels: [
           '2019 September',
           '2019 October',
@@ -34,14 +38,17 @@ export default {
           [ 23452, 25262, 30760, 28960, 31234, 34503, 27689 ]
         ]
       },
-      // options
-      {
+      chartOptions: {
         width: 800,
         height: 600,
-        lineSmooth: Chartist.Interpolation.none({
-          fillHoles: false
-        }),
-      });
+        // lineSmooth: Chartist.Interpolation.none({
+        //   fillHoles: false
+        // }),
+      },
+    };
+  },
+  mounted() {
+    console.log(this.title + " mounted.");
   }
 }
 </script>
