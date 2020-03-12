@@ -4,6 +4,7 @@
       <line-chart
         :data="chartData.data"
         :options="chartData.options"
+        :theme="chartData.theme"
       />
     </div>
   </div>

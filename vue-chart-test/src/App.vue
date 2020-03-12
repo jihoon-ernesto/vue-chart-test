@@ -54,6 +54,8 @@ export default {
             {
               label: this.srcData.series[0].name,
               data: this.srcData.series[0].data,
+              borderColor: this.chartStyle.lineColor,
+              backgroundColor: this.chartStyle.backgroundColor, // or 'transparent'
             }
           ],
         },
@@ -80,6 +82,11 @@ export default {
             height: this.srcData.height,
           },
         },
+        theme: {
+          series: {
+            colors: [ this.chartStyle.lineColor ],
+          },
+        },
       };
     },
   },
@@ -104,6 +111,10 @@ export default {
         ],
         width: 800,
         height: 600,
+      },
+      chartStyle: {
+        lineColor: 'orange',
+        backgroundColor: 'rgba(255, 255, 224, 0.3)', // lightyellow,
       },
     };
   },

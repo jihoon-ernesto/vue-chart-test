@@ -42,5 +42,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
+/* note: difficult to customize styles */
+.ct-series-a .ct-line {
+  /* the stroke color value here can't override the default value */
+  stroke: orange;
+  stroke-width: 5px;
+}
 </style>
