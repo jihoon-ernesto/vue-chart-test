@@ -3,14 +3,15 @@
     <!-- TODO: handle the css properly -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <vue-chartist
-      :type="this.type"
-      :data="this.chartData.data"
-      :options="this.chartData.options"
+      :type="type"
+      :data="chartData.data"
+      :options="chartOptions"
       ></vue-chartist>
   </div>
 </template>
 
 <script>
+import Chartist from 'chartist'
 import VueChartist from 'v-chartist';
 
 export default {
@@ -21,6 +22,16 @@ export default {
   },
   components: {
     'vue-chartist': VueChartist,
+  },
+  computed: {
+    chartOptions() {
+      return {
+        ...this.chartData.options,
+        lineSmooth: Chartist.Interpolation.none({
+          fillHoles: false
+        }),
+      }
+    },
   },
   data() {
     return {};

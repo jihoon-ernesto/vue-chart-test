@@ -42,9 +42,6 @@ export default {
         options: {
           width: this.srcData.width,
           height: this.srcData.height,
-          // lineSmooth: Chartist.Interpolation.none({
-          //   fillHoles: false
-          // }),
         },
       };
     },
