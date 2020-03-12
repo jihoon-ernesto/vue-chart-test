@@ -9,8 +9,8 @@
     <p>my chart.js example</p>
     <ChartJsExample class="chart"
       :chartData="dataForChartJS"
-      :width="this.srcData.width"
-      :height="this.srcData.height"
+      :width="srcData.width"
+      :height="srcData.height"
     />
 
     <p>my toast-chart example</p>

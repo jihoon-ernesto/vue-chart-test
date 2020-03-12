@@ -2,8 +2,8 @@
   <div id='container'>
     <div class='chart-box'>
       <line-chart
-        :data="this.chartData.data"
-        :options="this.chartData.options"
+        :data="chartData.data"
+        :options="chartData.options"
       />
     </div>
   </div>
