@@ -1,4 +1,5 @@
 # vue-chart-test
+testing some JS chart libraries (for using with vue.js)
 
 ## Project setup
 ```
